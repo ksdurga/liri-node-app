@@ -39,14 +39,14 @@ const searchSpotify = str => {
 const searchMovies = str =>{
   let url = `http://www.omdbapi.com/?apikey=trilogy&t=${str}`;
   axios.get(url).then((response)=>{
-    console.log(`Title: ${response.data.Title}`); // Movie Title
-    console.log(`Year: ${response.data.Year}`); // Release Year
-    console.log(`IMDB Rating: ${response.data.imdbRating}`); // IMDB rating
-    console.log(`RT Rating: ${response.data.Ratings[1].Value}`); // Rotten Tomatoes Rating (N.B. IF ROTTEN TOMATOES DATA IS NOT RETURNED, THIS IS USUALLY A METACRITIC SCORE)
-    console.log(`Country: ${response.data.Country}`); // Production Country
-    console.log(`Language: ${response.data.Language}`); // Movie Language
-    console.log(`Actors: ${response.data.Actors}`); // Movie Actors
-    console.log(`Plot Summary: ${response.data.Plot}`); // Movie Plot
+    console.log(`Title: ${response.data.Title}`); // title
+    console.log(`Year: ${response.data.Year}`); // year
+    console.log(`IMDB Rating: ${response.data.imdbRating}`); // IMDB
+    console.log(`RT Rating: ${response.data.Ratings[1].Value}`); // rotten tomatoes
+    console.log(`Country: ${response.data.Country}`); // country
+    console.log(`Language: ${response.data.Language}`); // language
+    console.log(`Actors: ${response.data.Actors}`); // actors
+    console.log(`Plot Summary: ${response.data.Plot}`); // plot
   }, (error)=>{
       console.log(error);
   });
@@ -80,7 +80,7 @@ const rando = () => {
   })
 };
 
-try{
+try {
   let command = process.argv[2].toLowerCase();
   let media = process.argv[3]
   
